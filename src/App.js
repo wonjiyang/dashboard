@@ -1,13 +1,12 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./views";
+import { ChakraProvider } from "@chakra-ui/react";
+import Routers from "./Routers";
+import './assets/scss/style.scss'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <ChakraProvider>
+      <Routers />
+    </ChakraProvider>
   )
 }
 
