@@ -1,16 +1,20 @@
+import { Box } from "@chakra-ui/react"
 import Footer from "./Footer"
 import Header from "./Header"
+import ContainerLg from "./Container"
 
 const Layout = (props) => {
     return (
-        <>
+        <Box display={'flex'} flexDir={'column'} minH={'100vh'}>
             <Header />
-            <main id="main">
+        <Box as="main" id="main" flexGrow={1}>
+            <ContainerLg py={4}>
                 <h2>{props.title}</h2>
                 {props.children}
-            </main>
-            <Footer />
-        </>
+            </ContainerLg>
+        </Box>
+        <Footer />
+        </Box>
     )
 }
 

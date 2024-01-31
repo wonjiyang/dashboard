@@ -1,6 +1,13 @@
+import { Box } from "@chakra-ui/react"
+import ContainerLg from "./Container"
+
 const Footer = () => {
     return (
-        <footer>footer</footer>
+        <Box as="footer" h={20} bg={'#eee'}>
+            <ContainerLg>
+                Footer
+            </ContainerLg>
+        </Box>
     )
 }
 
