@@ -1,17 +1,18 @@
 import { MoonIcon, SearchIcon } from "@chakra-ui/icons"
-import { Box, ButtonGroup, Heading, IconButton } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, IconButton } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 import ContainerLg from "./Container"
+import { lighten } from "polished"
 
 const Header = () => {
     return (
         <Box as="header" borderBottom={'3px soild'}>
             <ContainerLg>
                 <Box display={['block', null, 'flex']} h={100} alignItems={'center'} justifyContent={'space-between'}>
-                    <Heading fontSize={24} color={'brand.100'}>
+                    <Logo fontSize={24} color={'red.100'}>
                             <Link to="/">Dashboard</Link>
-                    </Heading>            
+                    </Logo>            
                     <Nav>
                         <NavList>
                             <li>
@@ -35,15 +36,24 @@ const Header = () => {
                         <IconButton aria-label="Search detabase" icon={<SearchIcon />} />
                         <IconButton aria-label="Dark detabase" icon={<MoonIcon />} />
                     </IconBtnGroup>
+                    <ButtonGroup>
+                        <Button variant='outline' colorScheme='blue'>Save</Button>
+                        <Button variant='cancel'>Cancel</Button>
+                    </ButtonGroup>
                 </Box>
             </ContainerLg>
         </Box>
     )
 }
 
+const Logo = styled.h1`
+    font-size: 24px;
+    color: ${(props) => props.theme.colors.brand[300]}; 
+`
+
 const Nav = styled.nav`
     height: 100px;
-    background-color: #fff;
+    background-color: ${({ theme }) => lighten(0.2, theme.colors.brand[500])};
 `
 const NavList = styled.ul`
     display: flex;
@@ -75,7 +85,7 @@ const NavList = styled.ul`
 `
 const IconBtnGroup = styled(ButtonGroup)`
     button {
-        background-color: none;
+        background-color: white;
     }
 `
 
