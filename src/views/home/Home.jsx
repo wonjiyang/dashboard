@@ -1,10 +1,12 @@
-import {Title, TitleH4 } from "../component/common/Title"
-import { Section } from "../component/layout/Container"
-import Layout from "../component/layout/Layout"
+import {Title, TitleH4 } from "../../component/common/Title"
+import { Section } from "../../component/layout/Container"
+import Layout from "../../component/layout/Layout"
+import MainSlide from "./components/MainSlide"
 
 const Home = () => {
     return (
-        <Layout title="home">
+        <Layout title="home" showTitle={false}>
+            <MainSlide />
             <Section>
                 <Title>회사 소개</Title>
                 <TitleH4>사장님 말씀</TitleH4>

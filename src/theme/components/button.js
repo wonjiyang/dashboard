@@ -15,6 +15,14 @@ export const buttonStyles = {
         },
       },
       variants: {
+        linktnb: () => ({
+          height: '32px',
+          fontSize: '12px',
+          fontWeight: '400',
+          color: 'white',
+          'padding-inline-start': '0',
+          'padding-inline-end': '0',
+        }),
         outline: () => ({
           borderRadius: '0',
           // bg: ['white', 'red.900', 'white', 'blue'],

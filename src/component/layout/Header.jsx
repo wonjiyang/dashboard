@@ -1,92 +1,60 @@
-import { MoonIcon, SearchIcon } from "@chakra-ui/icons"
-import { Box, Button, ButtonGroup, IconButton } from "@chakra-ui/react"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
-import ContainerLg from "./Container"
-import { lighten } from "polished"
+import { Box, Button, ButtonGroup, Container, Heading, IconButton } from "@chakra-ui/react"
+import { FaHamburger } from "react-icons/fa";
+import { RiAccountCircleFill } from "react-icons/ri";
+import { Link } from 'react-router-dom'
+import { SearchIcon } from '@chakra-ui/icons'
+import Gnb from "./Gnb"
 
 const Header = () => {
     return (
-        <Box as="header" borderBottom={'3px soild'}>
-            <ContainerLg>
-                <Box display={['block', null, 'flex']} h={100} alignItems={'center'} justifyContent={'space-between'}>
-                    <Logo fontSize={24} color={'red.100'}>
-                            <Link to="/">Dashboard</Link>
-                    </Logo>            
-                    <Nav>
-                        <NavList>
-                            <li>
-                                <Link to="/">Main Dashboard</Link>
-                            </li>
-                            <li>
-                                <Link to="/marketplace">NFT Marketplace</Link>
-                            </li>
-                            <li>
-                                <Link to="/datatables">Data Tables</Link>       
-                            </li>
-                            <li>
-                                <Link to="/profile">Profile</Link>
-                            </li>
-                            <li>
-                                <Link to="/signin">Sign In</Link>
-                            </li>
-                        </NavList>
-                    </Nav>
-                    <IconBtnGroup>
-                        <IconButton aria-label="Search detabase" icon={<SearchIcon />} />
-                        <IconButton aria-label="Dark detabase" icon={<MoonIcon />} />
-                    </IconBtnGroup>
-                    <ButtonGroup>
-                        <Button variant='outline' colorScheme='blue'>Save</Button>
-                        <Button variant='cancel'>Cancel</Button>
+        <Box as="header" position={'fixed'} top={'0'} left={0} right={0} zIndex={100} bg={['rgba(0,0,0,.6)','rgba(0,0,0,.05);', null, null]} backdropFilter={'saturate(180%) blur(15px)'}>
+            {/* tab */}
+            <Box display={['none', null, null, null, 'block']} h={'32px'} bg={'rgba(0,0,0,.6)'}>
+                <Container display="flex" justifyContent={'space-between'} alignItems={'center'}>
+                    <ButtonGroup gap={'10px'}>
+                        <Button colorScheme='teal' variant='linktnb'>
+                            공공 기관용
+                        </Button>
+                        <Button colorScheme='teal' variant='linktnb'>
+                            금융 클라우드
+                        </Button>
                     </ButtonGroup>
-                </Box>
-            </ContainerLg>
+                    <ButtonGroup gap={'10px'}>
+                        <Button colorScheme='teal' variant='linktnb'>
+                            로그인
+                        </Button>
+                        <Button colorScheme='teal' variant='linktnb'>
+                            회원가입
+                        </Button>
+                        <Button colorScheme='teal' variant='linktnb'>
+                            Languages
+                        </Button>
+                    </ButtonGroup>
+                </Container>
+            </Box>
+            {/* header */}
+            <Box bg={'rgba(0,0,0,.05)'}>
+                <Container
+                    display={['flex', null, null, 'flex']}
+                    h={100}
+                    alignItems={'center'}
+                    justifyContent={'space-between'}
+                >
+                    <Heading as={'h1'} fontSize={24}>
+                        <Link to="/">Dashboard</Link>
+                    </Heading>
+                    <Gnb/>
+                    <ButtonGroup>
+                        <IconButton variant='ghost' aria-label="Search database" display={{sm: 'flex', lg: 'none'}}><RiAccountCircleFill />
+                        </IconButton>
+                        <IconButton variant='ghost' aria-label="Search database" icon={<SearchIcon />} />
+                        <IconButton variant='ghost' aria-label="Search database" display={{sm: 'flex', lg: 'none'}}><FaHamburger />
+                        </IconButton>
+                    </ButtonGroup>
+                </Container>
+            </Box>
         </Box>
     )
 }
-
-const Logo = styled.h1`
-    font-size: 24px;
-    color: ${(props) => props.theme.colors.brand[300]}; 
-`
-
-const Nav = styled.nav`
-    height: 100px;
-    background-color: ${({ theme }) => lighten(0.2, theme.colors.brand[500])};
-`
-const NavList = styled.ul`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    gap: 20px;
-    padding: 0 10px;
-    margin: 0;
-    list-style: none;
-    li {
-        width: 100%;
-        text-align: center;
-    }
-    a {
-        display: block;
-    }
-    @media screen and (min-width: 768px) {
-        flex-direction: row;
-        li {
-            width: auto;
-        }
-        a {
-            display: inline-block;
-        }
-    }
-`
-const IconBtnGroup = styled(ButtonGroup)`
-    button {
-        background-color: white;
-    }
-`
 
 export default Header
