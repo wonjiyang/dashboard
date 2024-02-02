@@ -1,18 +1,19 @@
-import { Container } from "@chakra-ui/react"
+import { Box, Container } from "@chakra-ui/react"
 
 const ContainerLg = (props) => {
     return (
-        <Container maxW={1280} mx={'auto'} px={['20px', null, 0]}>
+        <Container maxW={1280} mx={'auto'} py={'20px'} px={['20px', null, 0]}>
             {props.children}
         </Container>
     )
 }
 
 export const Section =(props) => {
+    const backgroundColor = props.isLightBackground ? 'white' : 'gray.100'
     return (
-        <Container maxW={1280} mx={'auto'} px={['20px', null, 0]}>
+        <Box py={'100px'} bg={backgroundColor}>
             {props.children}
-        </Container>
+        </Box>
     )
 }
 
