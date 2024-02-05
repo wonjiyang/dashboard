@@ -9,7 +9,7 @@ import styled from 'styled-components';
 const MainSlide = () => {
     return (
         <>
-            <SwiperWrap pagination={true} modules={[Pagination]} className="mySwiper">
+            <SwiperWrap pagination={true} modules={[Pagination]} className="main-slide topCont">
                 <SwiperSlide>
                     <Image src='https://source.unsplash.com/random' alt='Dan Abramov' />
                 </SwiperSlide>

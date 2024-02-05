@@ -5,28 +5,19 @@ const Gnb = () => {
     return (
         <UnorderedList display={{sm: 'none', lg: 'flex'}} gap={'40px'} fontSize={'16px'}>
             <ListItem>
-                <Link to="/">소개</Link>
+                <Link to="/">Main Dashboard</Link>
             </ListItem>
             <ListItem>
-                <Link to="/marketplace">서비스</Link>
+                <Link to="/marketplace">NFT Marketplace</Link>
             </ListItem>
             <ListItem>
-                <Link to="/datatables">솔루션</Link>
+                <Link to="/datatables">Data Tables</Link>
             </ListItem>
             <ListItem>
-                <Link to="/datatables">마켓플레이스</Link>
+                <Link to="/datatables">Profile</Link>
             </ListItem>
             <ListItem>
-                <Link to="/datatables">요금</Link>
-            </ListItem>
-            <ListItem>
-                <Link to="/datatables">고객지원</Link>
-            </ListItem>
-            <ListItem>
-                <Link to="/datatables">파트너</Link>
-            </ListItem>
-            <ListItem>
-                <Link to="/datatables">가이드센터</Link>
+                <Link to="/datatables">Sign In</Link>
             </ListItem>
         </UnorderedList>
     )
