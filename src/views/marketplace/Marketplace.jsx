@@ -1,5 +1,4 @@
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
-import Layout from "../../component/layout/Layout"
+import { Box, Image, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import topImg from '../../assets/images/31448559_about_media_38ef19cd-33e8-4842-aa7c-2ca5473ae3a3.avif'
 
@@ -11,16 +10,17 @@ const Marketplace = () => {
         borderRadius: '50%'
     }
     return (
-        <Layout title="marketplace" showTitle={true}>
+        <>
            <Box className="topCont" h={'500px'} bg={`url(${topImg}) no-repeat 50% 50% / cover `}></Box>
             {/* <div>마켓플레이스 컨텐츠</div> */}
+            <Image src={topImg} alt=''></Image>
+            <Image src="/logo192.png" alt=''></Image>
             <Tabs>
                 <TabList>
                     <Tab>One</Tab>
                     <Tab>Two</Tab>
                     <Tab>Three</Tab>
                 </TabList>
-
                 <TabPanels>
                     <TabPanel>
                         <p>
@@ -53,7 +53,7 @@ const Marketplace = () => {
             />
 
             <div style={{ height: '100vh' }}></div>
-        </Layout>
+        </ >
     )
 }
 

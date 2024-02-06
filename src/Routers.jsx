@@ -4,22 +4,22 @@ import DataTables from "./views/datatables/DataTables";
 import Profile from "./views/profile/Profile";
 import SignIn from "./views/signin/SignIn";
 import Home from "./views/home/Home";
-
-const routeArr = [
-    {path: "/", element: <Home />},
-    {path: "/marketplace", element: <Marketplace />},
-    {path: "/datatables", element: <DataTables />},
-    {path: "/profile", element: <Profile />},
-    {path: "/signin", element: <SignIn />},
-]
+import Layout, { LayoutNone } from "./component/layout/Layout";
 
 const Routers = () => {
     return (
         <BrowserRouter>
             <Routes>
-                {routeArr.map((item, index) => (
-                    <Route key={index} path={item.path} element={item.element}/>
-                ))}
+                <Route element={<Layout />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/marketplace" element={<Marketplace />} />
+                    <Route path="/datatables" element={<DataTables />} />
+                    <Route path="/profile" element={<Profile />} />
+                </Route>
+
+                <Route element={<LayoutNone />}>
+                    <Route path="/signin" element={<SignIn />} />
+                </Route>    
             </Routes>
         </BrowserRouter>    
     )
