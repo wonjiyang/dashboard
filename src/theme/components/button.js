@@ -15,6 +15,15 @@ export const buttonStyles = {
         },
       },
       variants: {
+        icon: () => ({
+          w: '40px',
+          h: '40px',
+          minW: 'none',
+          p: '0',
+          bg: 'transparent',
+          color: 'gray.500',
+          borderRadius: '50%',
+      }),
         linktnb: () => ({
           height: '32px',
           fontSize: '12px',
@@ -26,9 +35,9 @@ export const buttonStyles = {
         outline: () => ({
           borderRadius: '0',
           // bg: ['white', 'red.900', 'white', 'blue'],
-          bg: {sm: 'blue', md: 'red.100', lg: 'red.900', xl: 'white'},
+          bg: {base: 'blue', md: 'red.100', lg: 'red.900', xl: 'white'},
           // color: ['blue', 'white', 'blue', 'white'],
-          color: {sm: 'white', md: 'blue', lg: 'white', xl: 'blue'}
+          color: {base: 'white', md: 'blue', lg: 'white', xl: 'blue'}
         }),
         cancel: () => ({
           bg: 'white'

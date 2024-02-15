@@ -1,8 +1,8 @@
-import { Box, Image, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import topImg from '../../assets/images/31448559_about_media_38ef19cd-33e8-4842-aa7c-2ca5473ae3a3.avif'
 
-const Marketplace = () => {
+const  Marketplace = () => {
     const boxstyle = {
         width: '200px',
         height: '200px',
@@ -13,8 +13,8 @@ const Marketplace = () => {
         <>
            <Box className="topCont" h={'500px'} bg={`url(${topImg}) no-repeat 50% 50% / cover `}></Box>
             {/* <div>마켓플레이스 컨텐츠</div> */}
-            <Image src={topImg} alt=''></Image>
-            <Image src="/logo192.png" alt=''></Image>
+            {/* <Image src={topImg} alt=''></Image>
+            <Image src="/logo192.png" alt=''></Image> */}
             <Tabs>
                 <TabList>
                     <Tab>One</Tab>

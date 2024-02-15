@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Marketplace from "./views/marketplace/Marketplace";
+import Marketplace from "./views/marketplace/NFT Marketplace";
 import DataTables from "./views/datatables/DataTables";
 import Profile from "./views/profile/Profile";
 import SignIn from "./views/signin/SignIn";

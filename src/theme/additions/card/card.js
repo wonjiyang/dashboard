@@ -6,7 +6,7 @@ const Card = {
     flexDirection: "column",
     width: "100%",
     position: "relative",
-    borderRadius: "20px",
+    borderRadius: "40px",
     minWidth: "0px",
     wordWrap: "break-word",
     bg: mode("#ffffff", "navy.800")(props),

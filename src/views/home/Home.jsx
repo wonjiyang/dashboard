@@ -1,51 +1,42 @@
-import { Container } from "@chakra-ui/react"
-import {Title, TitleH4 } from "../../component/common/Title"
-import { Section } from "../../component/layout/Container"
-import MainSlide from "./components/MainSlide"
+import { Box, SimpleGrid } from "@chakra-ui/react"
+import MiniSt from "../../component/card/MiniSt"
+import Icon from "../../component/icons/Icon"
+import { MdOutlineBarChart } from "react-icons/md";
+import { IoDocuments } from "react-icons/io5";
+import { TbTableFilled } from "react-icons/tb";
+import { IoMdHome } from "react-icons/io";
 
 const Home = () => {
     return (
-        <>
-            <MainSlide />
-            <Section isLightBackground={true}>
-                <Container>
-                <Title>회사 소개</Title>
-                <TitleH4>사장님 말씀</TitleH4>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui magnam assumenda, adipisci iste sint
-                provident tempore mollitia. Deserunt labore ipsa quod odit dolore animi repudiandae vero dolorum
-                delectus similique?
-                <TitleH4>사업 개요</TitleH4>
-                </Container>
-            </Section>
-            <Section>
-                <Container>
-                <Title>회사 비전</Title>
-                <TitleH4>연혁</TitleH4>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
-                laboriosam neque inventore molestias libero corrupti maxime? Iusto accusamus magni quis dolorem
-                voluptatum saepe aut.
-                </Container>
-            </Section>
-            <Section isLightBackground={true}>
-                <Container>
-                <Title>회사 소개</Title>
-                <TitleH4>사장님 말씀</TitleH4>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore qui magnam assumenda, adipisci iste sint
-                provident tempore mollitia. Deserunt labore ipsa quod odit dolore animi repudiandae vero dolorum
-                delectus similique?
-                <TitleH4>사업 개요</TitleH4>
-                </Container>
-            </Section>
-            <Section>
-                <Container>
-                <Title>회사 비전</Title>
-                <TitleH4>연혁</TitleH4>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, facere. Ex asperiores maiores atque, ipsam
-                laboriosam neque inventore molestias libero corrupti maxime? Iusto accusamus magni quis dolorem
-                voluptatum saepe aut.
-                </Container>
-            </Section>
-        </>
+        <Box>
+            <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing='20px'>
+                <MiniSt 
+                    name="Earnings" 
+                    value="$350.4" 
+                    startContent={<Icon w={'60px'} h={'60px'} bg={'bgDefault'} icon={<MdOutlineBarChart />}/>} />
+                <MiniSt
+                    name="Spend this month" 
+                    value="$642.39" 
+                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<IoDocuments />}/>} />
+                <MiniSt
+                    growth="10.39%"
+                    name="Sales" 
+                    value="$574.34" 
+                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<MdOutlineBarChart />}/>} />
+                <MiniSt
+                    name="Your Balance" 
+                    value="$1,000"
+                    endContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<TbTableFilled />}/>}/>
+                <MiniSt
+                    name="New Tasks" 
+                    value="145" 
+                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<MdOutlineBarChart />}/>} />
+                <MiniSt
+                    name="Total Projects" 
+                    value="$2433" 
+                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<IoMdHome />}/>} />
+            </SimpleGrid>
+        </Box>
     )
 }
 
