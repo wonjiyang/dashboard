@@ -1,42 +1,74 @@
-import { Box, SimpleGrid } from "@chakra-ui/react"
+import { Box, SimpleGrid, VStack } from "@chakra-ui/react"
 import MiniSt from "../../component/card/MiniSt"
 import Icon from "../../component/icons/Icon"
 import { MdOutlineBarChart } from "react-icons/md";
 import { IoDocuments } from "react-icons/io5";
 import { TbTableFilled } from "react-icons/tb";
 import { IoMdHome } from "react-icons/io";
+import TotalSpent from "./components/TotalSpent";
+import WeeklyRevenue from "./components/WeeklyRevenue";
+import CheckTable from "./components/CheckTable";
 
 const Home = () => {
     return (
-        <Box>
-            <SimpleGrid columns={{base: 1, md: 2, lg: 3}} spacing='20px'>
-                <MiniSt 
-                    name="Earnings" 
-                    value="$350.4" 
-                    startContent={<Icon w={'60px'} h={'60px'} bg={'bgDefault'} icon={<MdOutlineBarChart />}/>} />
+        <VStack spacing={5}>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3, "2xl": 6 }} spacing="20px" w={'100%'}>
                 <MiniSt
-                    name="Spend this month" 
-                    value="$642.39" 
-                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<IoDocuments />}/>} />
+                    name="Earnings"
+                    value="$350.4"
+                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<MdOutlineBarChart />} />}
+                />
                 <MiniSt
-                    growth="10.39%"
-                    name="Sales" 
-                    value="$574.34" 
-                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<MdOutlineBarChart />}/>} />
+                    name="Spend this month"
+                    value="$642.39"
+                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<IoDocuments />} />}
+                />
+                <MiniSt growth="10.39%" name="Sales" value="$574.34" />
                 <MiniSt
-                    name="Your Balance" 
+                    name="Your balance"
                     value="$1,000"
-                    endContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<TbTableFilled />}/>}/>
+                    endContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<TbTableFilled />} />}
+                />
                 <MiniSt
-                    name="New Tasks" 
-                    value="145" 
-                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<MdOutlineBarChart />}/>} />
+                    name="New Tasks"
+                    value="154"
+                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<MdOutlineBarChart />} />}
+                />
                 <MiniSt
-                    name="Total Projects" 
-                    value="$2433" 
-                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<IoMdHome />}/>} />
+                    name="Total Projects"
+                    value="2935"
+                    startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<IoMdHome />} />}
+                />
             </SimpleGrid>
-        </Box>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+                <TotalSpent />
+                <WeeklyRevenue />
+            </SimpleGrid>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+                <CheckTable />
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+                    <Box bg="tomato" height="80px">
+                        ddd
+                    </Box>
+                    <Box bg="tomato" height="80px">
+                        ddd
+                    </Box>
+                </SimpleGrid>
+            </SimpleGrid>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+                <Box bg="tomato" height="80px">
+                    ddd
+                </Box>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+                    <Box bg="tomato" height="80px">
+                        ddd
+                    </Box>
+                    <Box bg="tomato" height="80px">
+                        ddd
+                    </Box>
+                </SimpleGrid>
+            </SimpleGrid>
+        </VStack>
     )
 }
 

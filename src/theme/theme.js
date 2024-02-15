@@ -11,6 +11,7 @@ import { linkStyles } from "./components/link";
 import { breakpoints } from "./foundations/breakpoints";
 import { globalStyles } from "./styles";
 import { cardStyles } from "./components/card";
+import { tabelStyles } from "./components/table";
 export default extendTheme(
   { breakpoints }, // Breakpoints
   globalStyles,
@@ -24,4 +25,5 @@ export default extendTheme(
   switchStyles, // switch styles
   CardComponent, // card component
   cardStyles,
+  tabelStyles,
 );
