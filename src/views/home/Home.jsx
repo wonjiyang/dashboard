@@ -1,13 +1,17 @@
-import { Box, SimpleGrid, VStack } from "@chakra-ui/react"
+import { Card, SimpleGrid, VStack } from "@chakra-ui/react"
 import MiniSt from "../../component/card/MiniSt"
 import Icon from "../../component/icons/Icon"
 import { MdOutlineBarChart } from "react-icons/md";
 import { IoDocuments } from "react-icons/io5";
 import { TbTableFilled } from "react-icons/tb";
 import { IoMdHome } from "react-icons/io";
+import CheckTable from "./components/CheckTable";
+import DailyTraffic from "./components/DailyTraffic";
+import YourPieChart from "./components/YourPieChart";
 import TotalSpent from "./components/TotalSpent";
 import WeeklyRevenue from "./components/WeeklyRevenue";
-import CheckTable from "./components/CheckTable";
+import ComplexTable from "./components/ComplexTable";
+import Task from "./components/Task";
 
 const Home = () => {
     return (
@@ -40,32 +44,24 @@ const Home = () => {
                     startContent={<Icon w={'56px'} h={'56px'} bg={'bgDefault'} icon={<IoMdHome />} />}
                 />
             </SimpleGrid>
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'} >
                 <TotalSpent />
                 <WeeklyRevenue />
             </SimpleGrid>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
                 <CheckTable />
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
-                    <Box bg="tomato" height="80px">
-                        ddd
-                    </Box>
-                    <Box bg="tomato" height="80px">
-                        ddd
-                    </Box>
+                    <DailyTraffic />
+                    <YourPieChart />
                 </SimpleGrid>
             </SimpleGrid>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
-                <Box bg="tomato" height="80px">
-                    ddd
-                </Box>
+                    <ComplexTable />
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
-                    <Box bg="tomato" height="80px">
+                    <Task />
+                    <Card>
                         ddd
-                    </Box>
-                    <Box bg="tomato" height="80px">
-                        ddd
-                    </Box>
+                    </Card>
                 </SimpleGrid>
             </SimpleGrid>
         </VStack>

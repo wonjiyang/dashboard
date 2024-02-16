@@ -12,6 +12,9 @@ export const barChartOptionsDailyTraffic = {
     toolbar: {
       show: false,
     },
+    style: {
+      weight: '10px'
+    },
   },
   tooltip: {
     style: {

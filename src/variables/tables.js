@@ -35,3 +35,34 @@ export const tableDataCheck = [
         date: 'Nov 29, 2022'
     },
 ]
+
+export const tableDataComplex = [
+    {
+        id: 1,
+        name: 'MarktPlace',
+        status: 'Approved',
+        date: '20.Jan.2021',
+        progress: '70%'
+    },
+    {
+        id: 2,
+        name: 'MarktPlace',
+        status: 'Disable',
+        date: '30.Dec.2021',
+        progress: '30%'
+    },
+    {
+        id: 3,
+        name: 'MarktPlace',
+        status: 'Error',
+        date: '20.May.2021',
+        progress: '50%'
+    },
+    {
+        id: 4,
+        name: 'MarktPlace',
+        status: 'Approved',
+        date: '12.Jul.2021',
+        progress: '20%'
+    },
+]
