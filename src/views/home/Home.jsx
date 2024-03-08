@@ -1,4 +1,4 @@
-import { Card, SimpleGrid, VStack } from "@chakra-ui/react"
+import { SimpleGrid, VStack } from "@chakra-ui/react"
 import MiniSt from "../../component/card/MiniSt"
 import Icon from "../../component/icons/Icon"
 import { MdOutlineBarChart } from "react-icons/md";
@@ -12,6 +12,8 @@ import TotalSpent from "./components/TotalSpent";
 import WeeklyRevenue from "./components/WeeklyRevenue";
 import ComplexTable from "./components/ComplexTable";
 import Task from "./components/Task";
+import MiniCalendar from "../../component/calendar/MiniCalendar";
+import ComplexTableComm from "./components/ComplexTableComm";
 
 const Home = () => {
     return (
@@ -59,9 +61,14 @@ const Home = () => {
                     <ComplexTable />
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
                     <Task />
-                    <Card>
-                        ddd
-                    </Card>
+                    <MiniCalendar />
+                </SimpleGrid>
+            </SimpleGrid>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+                    <ComplexTableComm />
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+                    <Task />
+                    <MiniCalendar />
                 </SimpleGrid>
             </SimpleGrid>
         </VStack>

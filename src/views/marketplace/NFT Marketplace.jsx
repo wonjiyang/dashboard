@@ -1,59 +1,59 @@
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import topImg from '../../assets/images/31448559_about_media_38ef19cd-33e8-4842-aa7c-2ca5473ae3a3.avif'
+import React, { useEffect } from 'react'
+import { Box, Card, Flex, Grid, GridItem, SimpleGrid, VStack } from "@chakra-ui/react"
+import Banner from "./components/Banner"
+import NFT from "../../component/card/NFT"
+import { TitleH3 } from "../../component/common/Title"
+import Nft1 from 'assets/images/nfts/Nft1.png'
+// import Nft2 from 'assets/images/nfts/Nft2.png'
+// import Nft3 from 'assets/images/nfts/Nft3.png'
+// import Nft4 from 'assets/images/nfts/Nft4.png'
+// import Nft5 from 'assets/images/nfts/Nft5.png'
+// import Nft6 from 'assets/images/nfts/Nft6.png'
+import Avatar1 from 'assets/images/avatars/avatar1.png'
+import Avatar2 from 'assets/images/avatars/avatar2.png'
+import Avatar3 from 'assets/images/avatars/avatar3.png'
+import Avatar4 from 'assets/images/avatars/avatar4.png'
 
 const  Marketplace = () => {
-    const boxstyle = {
-        width: '200px',
-        height: '200px',
-        background: 'red',
-        borderRadius: '50%'
-    }
-    return (
-        <>
-           <Box className="topCont" h={'500px'} bg={`url(${topImg}) no-repeat 50% 50% / cover `}></Box>
-            {/* <div>마켓플레이스 컨텐츠</div> */}
-            {/* <Image src={topImg} alt=''></Image>
-            <Image src="/logo192.png" alt=''></Image> */}
-            <Tabs>
-                <TabList>
-                    <Tab>One</Tab>
-                    <Tab>Two</Tab>
-                    <Tab>Three</Tab>
-                </TabList>
-                <TabPanels>
-                    <TabPanel>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eum nulla porro officia
-                            sequi consectetur neque. Maxime fugit enim quaerat autem id impedit perferendis quibusdam
-                            suscipit modi! Quasi, suscipit laudantium.!
-                        </p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis molestiae, numquam neque
-                            ducimus dolor labore quasi enim magnam? Suscipit eaque natus quos eos consequatur fuga
-                            cupiditate odio dolores pariatur soluta.!
-                        </p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis perferendis culpa dolorem
-                            porro repellat. Amet suscipit laudantium, a enim molestiae recusandae ratione iste in nemo
-                            illum delectus debitis velit perferendis!!
-                        </p>
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
-            <motion.div
-                style={boxstyle}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, x: 100 }}
-                transition={{ ease: 'easeOut', duration: 2 }}
-            />
+    useEffect(() => {
+        // 컴포넌트가 마운트될 때 body에 id 추가
+        document.body.setAttribute('id', 'marketplace')
 
-            <div style={{ height: '100vh' }}></div>
-        </ >
+        // 컴포넌트가 언마운트될 때 실행될 클린업 함수
+        return () => {
+            // 컴포넌트가 언마운트될 때 body에서 id 제거
+            document.body.removeAttribute('id')
+        }
+        // []를 두번째 인자로 넘겨주면 컴포넌트가 마운트될 때와 언마운트될 때만 실행됨
+        // 만약 두번째 인자를 넘겨주지 않으면 컴포넌트가 업데이트될 때마다 실행됨
+        // 만약 두번째 인자에 특정 값이 들어가면 그 값이 변경될 때만 실행됨
+        // 만약 두번째 인자에 빈 배열이 들어가면 컴포넌트가 마운트될 때만 실행됨
+    }, [])
+    return (
+        <Grid templateColumns="repeat(3, 1fr)" display={{ base: 'block', xl: 'grid'}} gap={6}>
+            <Flex gridColumn='1 / span 2' flexDir={'column'} w={'100%'} gap={10}>
+                <Banner />
+                <Flex direction={'column'}>
+                    <Box>
+                        <TitleH3>Trending NFTs</TitleH3>
+                        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
+                            <NFT 
+                                name="Abstract Colors"
+                                author="By Esthera Jackson"
+                                bidders={[Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1]}
+                                image={Nft1}
+                                currentbid="0.91 ETH"
+                                download="#"
+                            />
+                        </SimpleGrid>
+                    </Box>
+                </Flex>
+            </Flex>
+            <Flex w={'100%'}>
+                <Box w={'100%'} h={10} bg={'blue.500'}></Box>
+                <Box w={'100%'} h={10} bg={'blue.500'}></Box>
+            </Flex>
+        </Grid> 
     )
 }
 

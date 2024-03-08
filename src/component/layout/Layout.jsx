@@ -28,7 +28,8 @@ const Layout = () => {
                     pos={'fixed'} 
                     top={'27px'} 
                     left={{ base: '4px', xl: '298px' }} 
-                    right={'4px'} 
+                    right={'4px'}
+                    zIndex={1}
                     p={2}
                     flexDirection={{base: 'column', md: 'row'}}
                     justifyContent={'space-between'}

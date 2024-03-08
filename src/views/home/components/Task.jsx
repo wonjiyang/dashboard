@@ -1,22 +1,56 @@
-import { Card, CardBody, CardHeader, Checkbox, Stack } from "@chakra-ui/react"
+import { Box, Flex, Text, Icon, useColorModeValue, Checkbox, Card, CardHeader, CardBody } from '@chakra-ui/react'
 
-const Task = () => {
-    return(
+// Assets
+import { MdDragIndicator } from 'react-icons/md'
+import React from 'react'
+
+export default function Task() {
+    // Chakra Color Mode
+    const textColor = useColorModeValue('secondaryGray.900', 'white')
+    const boxBg = useColorModeValue('secondaryGray.300', 'navy.700')
+    const brandColor = useColorModeValue('brand.500', 'brand.400')
+    return (
         <Card>
-            <CardHeader fontSize={18} fontWeight={600}>
-                <Checkbox defaultChecked>Tasks</Checkbox>
-            </CardHeader>
-            <CardBody display={'block'} w={'100%'}>
-                <Stack spacing={1}>
-                    <Checkbox>Landing Page Design</Checkbox>
-                    <Checkbox>Mobile App Design</Checkbox>
-                    <Checkbox>Dashboard Builder</Checkbox>
-                    <Checkbox>Landing Page Design</Checkbox>
-                    <Checkbox>Dashboard Builder</Checkbox>
-                </Stack>
+            <CardHeader fontSize={18} fontWeight={600}>Tasks</CardHeader>
+            <CardBody>
+                <Box w={'100%'} mt={2}>
+                    <Flex mb="20px">
+                        <Checkbox me="16px" colorScheme="brandScheme" />
+                        <Text fontWeight="bold" color={textColor} fontSize="md" textAlign="start">
+                            Landing Page Design
+                        </Text>
+                        <Icon ms="auto" as={MdDragIndicator} color="secondaryGray.600" w="24px" h="24px" />
+                    </Flex>
+                    <Flex mb="20px">
+                        <Checkbox me="16px" defaultChecked colorScheme="brandScheme" />
+                        <Text fontWeight="bold" color={textColor} fontSize="md" textAlign="start">
+                            Dashboard Builder
+                        </Text>
+                        <Icon ms="auto" as={MdDragIndicator} color="secondaryGray.600" w="24px" h="24px" />
+                    </Flex>
+                    <Flex mb="20px">
+                        <Checkbox defaultChecked me="16px" colorScheme="brandScheme" />
+                        <Text fontWeight="bold" color={textColor} fontSize="md" textAlign="start">
+                            Mobile App Design
+                        </Text>
+                        <Icon ms="auto" as={MdDragIndicator} color="secondaryGray.600" w="24px" h="24px" />
+                    </Flex>
+                    <Flex mb="20px">
+                        <Checkbox me="16px" colorScheme="brandScheme" />
+                        <Text fontWeight="bold" color={textColor} fontSize="md" textAlign="start">
+                            Illustrations
+                        </Text>
+                        <Icon ms="auto" as={MdDragIndicator} color="secondaryGray.600" w="24px" h="24px" />
+                    </Flex>
+                    <Flex mb="20px">
+                        <Checkbox defaultChecked me="16px" colorScheme="brandScheme" />
+                        <Text fontWeight="bold" color={textColor} fontSize="md" textAlign="start">
+                            Promotional LP
+                        </Text>
+                        <Icon ms="auto" as={MdDragIndicator} color="secondaryGray.600" w="24px" h="24px" />
+                    </Flex>
+                </Box>
             </CardBody>
         </Card>
     )
 }
-
-export default Task
