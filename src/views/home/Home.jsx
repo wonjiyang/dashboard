@@ -57,13 +57,13 @@ const Home = () => {
                     <YourPieChart />
                 </SimpleGrid>
             </SimpleGrid>
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
+            {/* <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
                     <ComplexTable />
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
                     <Task />
                     <MiniCalendar />
                 </SimpleGrid>
-            </SimpleGrid>
+            </SimpleGrid> */}
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
                     <ComplexTableComm />
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing="20px" w={'100%'}>
