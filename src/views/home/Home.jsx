@@ -19,8 +19,9 @@ import { useEffect, useState } from "react";
 const Home = () => {
     // 컴포넌트가 마운팅될 때, 업데이트될 때, 언마운팅될 때 실행되는 useEffect
     useEffect(() => {
+        console.log('색상이 변경되었습니다' ,color)
         // Mounting
-        document.body.style.backgroundColor = 'yellow'
+        document.body.style.backgroundColor = color
         document.body.id = 'intro'
         document.body.classList.add('intro')
         // Unmounting
@@ -29,16 +30,13 @@ const Home = () => {
             document.body.id = ''
             document.body.classList.remove('intro')
         }
-    }, [])
+    }, [color])
     // Updating
     const [color, setColor] = useState('yellow')
     const toggleColor = () => {
         setColor((prevColor) => (prevColor === 'yellow' ? 'lightblue' : 'yellow'))
     }
-    useEffect(() => {
-        console.log('색상이 변경되었습니다' ,color)
-    }, [color])
-
+    
     return (
         <VStack spacing={5}>
             <Button onClick={toggleColor}>배경색 변경</Button>
